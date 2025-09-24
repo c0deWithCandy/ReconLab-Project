@@ -1,2 +1,27 @@
 # ReconLab-Project
 Recon + Scanning lab — Nmap &amp; OpenVAS deliverables
+ReconLab/
+├─ .gitignore
+├─ README.md
+├─ LICENSE
+├─ nmap/
+│  ├─ nmap_scan.sh
+│  ├─ parse_nmap.py
+│  └─ sample_nmap.xml
+├─ openvas/
+│  ├─ openvas_report_template.md
+│  └─ openvas_report_summary.md
+├─ reports/
+│  ├─ nmap_target.xml
+│  ├─ nmap_target.nmap
+│  ├─ nmap_report.pdf
+│  ├─ openvas_target_report.pdf
+│  └─ capture.pcap
+├─ demo/
+│  ├─ demo_script.md
+│  ├─ demo.mp4
+│  └─ slides.pdf
+└─ .github/
+   ├─ workflows/
+   │  └─ markdown-to-pdf.yml
+   └─ ISSUE_TEMPLATE.md

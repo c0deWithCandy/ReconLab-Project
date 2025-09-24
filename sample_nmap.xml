@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- small placeholder sample; replace with your actual nmap -oX output -->
+<nmaprun>
+  <host>
+    <status state="up"/>
+    <address addr="192.168.56.101" addrtype="ipv4"/>
+    <ports>
+      <port protocol="tcp" portid="21">
+        <state state="open"/>
+        <service name="ftp" product="vsftpd" version="2.3.4"/>
+      </port>
+      <port protocol="tcp" portid="22">
+        <state state="open"/>
+        <service name="ssh" product="OpenSSH" version="4.7p1"/>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open"/>
+        <service name="http" product="Apache httpd" version="2.2.8"/>
+      </port>
+    </ports>
+    <os>
+      <osmatch name="Linux 2.6.X" />
+    </os>
+  </host>
+</nmaprun>

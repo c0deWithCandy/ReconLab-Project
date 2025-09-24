@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Reports and captures (if you don't want to push large ones)
+reports/*.pcap
+reports/*.xml
+reports/*.nmap
+
+# Video
+demo/*.mp4
+demo/*.mov
+
+# Credentials / secrets
+*.pem
+*.key
+.env

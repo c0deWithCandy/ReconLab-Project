@@ -1,0 +1,71 @@
+# OpenVAS (GVM) Folder
+
+This folder includes:
+- `openvas_instructions.md` — step-by-step install and scan instructions for a lab.
+- `openvas_report_template.md` — a Markdown report template to paste/export OpenVAS findings into.
+
+## Notes
+OpenVAS (GVM) installation steps vary by distro and version. Follow distro docs if `gvm-setup`/`gvm-check-setup` are not available.
+
+You can export OpenVAS/GVM reports as PDF/HTML via the web UI; then place them in `reports/` and use the provided `openvas_report_template.md` to summarize high/critical findings.
+# OpenVAS / GVM - Quick Lab Instructions
+
+1. **Install (Kali modern versions include GVM).** Example (Kali/Debian-based):
+```bash
+sudo apt update
+sudo apt install gvm -y
+sudo gvm-setup         # may take a while (feeds, certs, user)
+sudo gvm-check-setup
+```
+If your distro does not provide `gvm` package, follow Greenbone's installation docs.
+
+2. **Start services** (if not already running):
+```bash
+sudo gvm-start
+# or systemctl start gvm
+```
+
+3. **Login to web UI**
+Open: `https://<kali-ip>:9392` and login with the created admin account.
+
+4. **Create a Target**
+ - Name: Metasploitable2 (lab)
+ - Hosts: 192.168.56.101
+ - Save
+
+5. **Create a Task** referencing that target and choose an appropriate scan configuration (Full and fast — lab).
+
+6. **Run the Task**. When finished, export the report (PDF/HTML/CSV) from the UI.
+
+7. **Analyze findings**: Sort by severity (Critical → High → Medium → Low). For each critical/high item, capture:
+ - Title
+ - Affected host/port/service
+ - CVE (if supplied)
+ - Description
+ - Exploitability / PoC (if in safe lab)
+ - Recommended remediation
+
+8. **Save exported report** to `reports/openvas_target_report.pdf` and summarize key findings in `openvas_report_summary.md`.
+
+# OpenVAS Vulnerability Summary (Template)
+
+**Target:** 192.168.56.101  
+**Scan date:** <YYYY-MM-DD>  
+**Scanner:** OpenVAS / GVM
+
+## Executive Summary
+- Number of findings: X
+- Critical: N
+- High: N
+- Medium: N
+- Low: N
+
+## Top Critical / High Findings
+| # | Severity | Title | Host:Port | CVE | Description | Recommendation |
+|---|---|---|---|---|---|---|
+| 1 | Critical | Example: vsftpd backdoor | 192.168.56.101:21 | CVE-2011-2523 | Short description | Upgrade/disable/patch |
+
+## Full Findings
+(Attach or link to exported PDF/HTML)
+- `reports/openvas_target_report.pdf`
+

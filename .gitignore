@@ -1,21 +1,6 @@
-# Python
-__pycache__/
+# Ignore typical system files
 *.pyc
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Reports and captures (if you don't want to push large ones)
+__pycache__/
 reports/*.pcap
 reports/*.xml
 reports/*.nmap
-
-# Video
-demo/*.mp4
-demo/*.mov
-
-# Credentials / secrets
-*.pem
-*.key
-.env

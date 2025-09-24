@@ -1,19 +1,18 @@
-# Nmap Folder
+# Recon Lab — Nmap & OpenVAS Deliverables
 
-Contains:
-- `nmap_scan.sh` — safe Nmap commands to run inside your lab.
-- `parse_nmap.py` — Python script that converts Nmap XML (`-oX`) into a readable Markdown report.
-- `sample_nmap.xml` — a small example (placeholder).
+**Objective:** Learn reconnaissance, scanning, vulnerability analysis, and reporting using Nmap and OpenVAS (GVM).  
+**Deliverables in this repository:**
+- `nmap/` — scripts to run Nmap and a parser to convert Nmap XML to a Markdown report.
+- `openvas/` — instructions and a reusable OpenVAS report template.
+- `reports/` — sample (placeholder) reports you can replace with real outputs.
+- `demo/` — demo video script, recording steps, and slide outline for a 5-minute demo.
 
-## Quick usage
+**Important:** This repository contains templates, scripts, and *sample placeholder files only*. I did NOT perform any active scans. You must run the included commands in a legal, isolated lab (e.g., Metasploitable2 in a host-only VM network).
 
-1. Run an Nmap scan and save XML:
-```bash
-sudo ./nmap_scan.sh 192.168.56.101
-# produces reports/nmap_target.xml and reports/nmap_target.nmap
-```
+See the `nmap/` and `openvas/` folders for detailed usage instructions.
 
-2. Convert XML to Markdown:
-```bash
-python3 parse_nmap.py reports/nmap_target.xml reports/nmap_report.md
-```
+--- 
+
+If you want, I can:
+- Run these scripts in your environment if you provide an uploaded Nmap XML / OpenVAS report.
+- Or generate a filled example report using a real `nmap` XML you paste here.
